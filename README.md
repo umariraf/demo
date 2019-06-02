@@ -17,7 +17,7 @@ Login
 6. Verify if an account can be deleted.
 Logout
 
-![alt text](https://github.com/priyasomangali/banking-demo/blob/master/Screen%20Shot%202019-06-03%20at%2012.05.29%20AM.png)
+![alt text](https://github.com/priyasomangali/banking-demo/blob/master/Cucumber_Report.png)
 
 To run:
 Run the jUnit runner class.
