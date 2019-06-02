@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="8" time="46.014923">
+<testcase classname="To test end to end functionality of banking application" name="Test Login function of a Banking application" time="7.709855">
+<system-out><![CDATA[Given Login url of the application..........................................passed
+When User enters username as "username".....................................passed
+And User enters password as "manager_password"..............................passed
+Then User should be logged in successfully..................................passed
+]]></system-out>
+</testcase>
+<testcase classname="To test end to end functionality of banking application" name="Creation of new customer record" time="4.9375">
+<system-out><![CDATA[Given Manager is logged in..................................................passed
+When Manager clicks New Customer link.......................................passed
+And Manager enters values in the given fields...............................passed
+And User clicks the submit button...........................................passed
+Then New customer record should be created successfully.....................passed
+]]></system-out>
+</testcase>
+<testcase classname="To test end to end functionality of banking application" name="Creation of new customer account" time="3.265061">
+<system-out><![CDATA[Given Manager is logged in..................................................passed
+When Manager clicks New Account link........................................passed
+And Manager enters valid "cust_id" in the customer id field.................passed
+And Manager chooses a valid account type....................................passed
+And Manager enters valid initial deposit amount.............................passed
+And User clicks the submit button...........................................passed
+Then New customer account for "cust_id" should be created successfully......passed
+]]></system-out>
+</testcase>
+<testcase classname="To test end to end functionality of banking application" name="Deposit amount in an active account" time="3.245517">
+<system-out><![CDATA[Given User is logged in.....................................................passed
+When User clicks Deposit link...............................................passed
+And User enters valid "account_id" in the Account id field..................passed
+And User enters valid deposit amount........................................passed
+And User enters valid description...........................................passed
+And User clicks the submit button...........................................passed
+Then Amount should be deposited in the given account id.....................passed
+]]></system-out>
+</testcase>
+<testcase classname="To test end to end functionality of banking application" name="Withdraw amount from an active account" time="7.515331">
+<system-out><![CDATA[Given User is logged in.....................................................passed
+When User clicks Withdrawal link............................................passed
+And User enters valid "account_id" in the Account id field..................passed
+And User enters valid withdrawal amount.....................................passed
+And User enters valid description...........................................passed
+And User clicks the submit button...........................................passed
+Then Amount should be withdrawn from the given account id...................passed
+]]></system-out>
+</testcase>
+<testcase classname="To test end to end functionality of banking application" name="Balance enquiry in an active account" time="11.335172">
+<system-out><![CDATA[Given User is logged in.....................................................passed
+When User clicks Balance Enquiry link.......................................passed
+And User enters valid "account_id" in the Account id field..................passed
+And User clicks the submit button...........................................passed
+Then Balance amount in the given account id should be displayed.............passed
+]]></system-out>
+</testcase>
+<testcase classname="To test end to end functionality of banking application" name="Delete an active account" time="5.032717">
+<system-out><![CDATA[Given Manager is logged in..................................................passed
+When Manager clicks Delete Account link.....................................passed
+And Manager enters valid "account_id" in the Account id field...............passed
+And User clicks the submit button...........................................passed
+And Manager accepts the alert...............................................passed
+Then "account_id" should be deleted succesfully.............................passed
+]]></system-out>
+</testcase>
+<testcase classname="To test end to end functionality of banking application" name="Test Logout function of a Banking application" time="2.97377">
+<system-out><![CDATA[Given User is successfully logged in and the session is active..............passed
+Then User clicks the logout button and is logged out successfully...........passed
+]]></system-out>
+</testcase>
+</testsuite>
