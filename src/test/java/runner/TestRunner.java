@@ -5,20 +5,13 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 
 //@RunWith(Cucumber.class)
-//@CucumberOptions(features = {"src/test/java/features/Login.feature",
-//							"src/test/java/features/NewCustomer.feature",
-//							"src/test/java/features/NewAccount.feature",
-//							"src/test/java/features/Deposit.feature",
-//							"src/test/java/features/Withdrawal.feature",
-//							"src/test/java/features/BalanceEnquiry.feature",
-//							"src/test/java/features/DeleteAccount.feature"},
+//@CucumberOptions(features = {"src/test/java/features/NewAccount.feature"
+//							},
 //							 
 //				 glue = {"stepdefinitions"})
 @RunWith(Cucumber.class)
-@CucumberOptions(features = {"src/test/resources/"},
-							 
-				 glue = {"stepdefinitions"})
-	
+@CucumberOptions(features = { "src/test/resources/" }, glue = { "stepdefinitions" }, plugin = { "pretty", "junit:target/cucumber-reports/Cucumber.xml"})
+
 public class TestRunner {
-	
+
 }

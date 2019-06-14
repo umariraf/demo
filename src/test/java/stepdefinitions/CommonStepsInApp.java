@@ -5,10 +5,12 @@ import java.util.Properties;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.When;
+import utils.JsonDataReader;
 import utils.LoaderFunction;
 
 public class CommonStepsInApp extends LoaderFunction {
 	Properties commonProperties = locators("src//main//java//locators//commonLocators.properties");
+	JsonDataReader readObj = new JsonDataReader();
 
 	public CommonStepsInApp() {
 		driver = DriverUtils.getDriver();
@@ -18,7 +20,7 @@ public class CommonStepsInApp extends LoaderFunction {
 	public boolean manager_is_logged_in() {
 		boolean is_manager_logged_in = false;
 		try {
-			is_manager_logged_in = is_displayed(driver, "linkText", commonProperties.getProperty("manager_link_loc"));
+			is_manager_logged_in = is_displayed(driver, "xpath", commonProperties.getProperty("manager_link_loc"));
 		} catch (InterruptedException e) {
 			e.getMessage();
 		}
@@ -29,16 +31,16 @@ public class CommonStepsInApp extends LoaderFunction {
 	public boolean user_is_logged_in() {
 		boolean is_user_logged_in = false;
 		try {
-			is_user_logged_in = is_displayed(driver, "linkText", commonProperties.getProperty("manager_link_loc"));
+			is_user_logged_in = is_displayed(driver, "xpath", commonProperties.getProperty("manager_link_loc"));
 		} catch (InterruptedException e) {
 			e.getMessage();
 		}
 		return is_user_logged_in;
 	}
 
-	@And("^User enters valid Account id in the Account id field$")
-	public void user_enters_valid_account_id() throws Throwable {
-		send_keys(driver, "xpath", commonProperties.getProperty("accountno_txt_loc"), "61020");
+	@And("^User enters valid \\\"(.*)\\\" in the Account id field$")
+	public void user_enters_valid_account_id(String account_id) throws Throwable {
+		send_keys(driver, "xpath", commonProperties.getProperty("accountno_txt_loc"), readObj.retrievevalue(account_id));
 	}
 
 	@And("^User enters valid description$")
