@@ -10,7 +10,7 @@ public class DriverUtils {
 	private static WebDriver driver;
 
 	@Before
-	public void initialize() {
+	public void beforeScenario() {
 		if (!initialized) {
 			initialized = true;
 			driver = new ChromeDriver();
@@ -21,8 +21,4 @@ public class DriverUtils {
 		return driver;
 	}
 
-//	@After
-//	public void tearDown() throws InterruptedException {
-//		driver.quit();
-//	}
 }
